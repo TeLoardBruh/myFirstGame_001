@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CollisionPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerScript player;
+    void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.collider.tag == "obstacle"){
+            Debug.Log("HITTED : ");
+            player.enabled = false;
+
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
